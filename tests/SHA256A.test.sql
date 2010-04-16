@@ -1,0 +1,96 @@
+
+-- SHA-224 test vectors (NIST SHAVS)
+
+-- short 2
+SELECT SHA256A(UNHEX('07'), 1)
+    = '00ecd5f138422b8ad74c9799fd826c531bad2fcabc7450bee2aa8c2a' AS short2;
+
+-- short 4
+SELECT SHA256A(UNHEX('18804005dd4fbd1556299d6f9d93df62'), 1)
+    = 'df90d78aa78821c99b40ba4c966921accd8ffb1e98ac388e56191db1' AS short4;
+
+-- long 2
+SELECT SHA256A(UNHEX(
+    '55b210079c61b53add520622d1ac97d5cdbe8cb33aa0ae344517bee4'
+    'd7ba09abc8533c5250887a43bebbac906c2e1837f26b36a59ae3be78'
+    '14d506896b718b2a383ecdac16b96125553f416ff32c6674c74599a9'
+    '005386d9ce1112245f48ee470d396c1ed63b92670ca56ec84deea814'
+    'b6135eca54392bdedb9489bc9b875a8baf0dc1ae785736914ab7daa2'
+    '64bc079d269f2c0d7eddd810a426145a0776f67c878273'), 1) 
+    = '0b31894ec8937ad9b91bdfbcba294d9adefaa18e09305e9f20d5c3a4' AS long2;
+
+-- random 3
+SELECT SHA256A(UNHEX(
+    'd0569cb3665a8a43eb6ea23d75a3c4d2054a0d7d66a9ca99c9ceb027'
+    'd0569cb3665a8a43eb6ea23d75a3c4d2054a0d7d66a9ca99c9ceb027'
+    'd0569cb3665a8a43eb6ea23d75a3c4d2054a0d7d66a9ca99c9ceb027'), 1)
+    = '38cea69d7be80c14ab3becb1e02e7b67ced60a051c4a0100e3e613b4' AS random3;
+
+-- random 4
+SELECT SHA256A(UNHEX(
+    'd0569cb3665a8a43eb6ea23d75a3c4d2054a0d7d66a9ca99c9ceb027'
+    'd0569cb3665a8a43eb6ea23d75a3c4d2054a0d7d66a9ca99c9ceb027'
+    '38cea69d7be80c14ab3becb1e02e7b67ced60a051c4a0100e3e613b4'), 1)
+    = 'ee210ffc8db915666c2a4fcb37d9e5c58993c01bdccf706a4077f955' AS random4;
+
+-- random 5
+SELECT SHA256A(UNHEX(
+    'd0569cb3665a8a43eb6ea23d75a3c4d2054a0d7d66a9ca99c9ceb027'
+    '38cea69d7be80c14ab3becb1e02e7b67ced60a051c4a0100e3e613b4'
+    'ee210ffc8db915666c2a4fcb37d9e5c58993c01bdccf706a4077f955'), 1)
+    = '915eb09c83e58cb8ed11d8f4bb3617984214625608de7de8dcab4030' AS random5;
+
+-- random 6
+SELECT SHA256A(UNHEX(
+    '38cea69d7be80c14ab3becb1e02e7b67ced60a051c4a0100e3e613b4'
+    'ee210ffc8db915666c2a4fcb37d9e5c58993c01bdccf706a4077f955'
+    '915eb09c83e58cb8ed11d8f4bb3617984214625608de7de8dcab4030'), 1)
+    = '25867f038cfcf0934c575ba567bb23a440e0fab984afbe23a5e26b3b' AS random6;
+
+
+-- SHA-256 test vectors (NIST SHAVS)
+
+-- short 2
+SELECT SHA256A(UNHEX('19'), 0)
+    = '68aa2e2ee5dff96e3355e6c7ee373e3d6a4e17f75f9518d843709c0c9bc3e3d4' AS short2;
+
+-- short 4
+SELECT SHA256A(UNHEX('e3d72570dcdd787ce3887ab2cd684652'), 0)
+    = '175ee69b02ba9b58e2b0a5fd13819cea573f3940a94f825128cf4209beabb4e8' AS short4;
+
+-- long 2
+SELECT SHA256A(UNHEX(
+    '8326754e2277372f4fc12b20527afef04d8a056971b11ad57123a7c137760000'
+    'd7bef6f3c1f7a9083aa39d810db310777dab8b1e7f02b84a26c773325f8b2374'
+    'de7a4b5a58cb5c5cf35bcee6fb946e5bd694fa593a8beb3f9d6592ecedaa66ca'
+    '82a29d0c51bcf9336230e5d784e4c0a43f8d79a30a165cbabe452b774b9c7109'
+    'a97d138f129228966f6c0adc106aad5a9fdd30825769b2c671af6759df28eb393d54d6'), 0)
+    = '97dbca7df46d62c8a422c941dd7e835b8ad3361763f7e9b2d95f4f0da6e1ccbc' AS long2;
+
+-- random 3
+SELECT SHA256A(UNHEX(
+    'f41ece2613e4573915696b5adcd51ca328be3bf566a9ca99c9ceb0279c1cb0a7'
+    'f41ece2613e4573915696b5adcd51ca328be3bf566a9ca99c9ceb0279c1cb0a7'
+    'f41ece2613e4573915696b5adcd51ca328be3bf566a9ca99c9ceb0279c1cb0a7'), 0)
+    = 'fddf1b37dd34b3b201d43c57bcde115838f0df701da93c3bf2c9c86896e7e6c7' AS random3;
+
+-- random 4
+SELECT SHA256A(UNHEX(
+    'f41ece2613e4573915696b5adcd51ca328be3bf566a9ca99c9ceb0279c1cb0a7'
+    'f41ece2613e4573915696b5adcd51ca328be3bf566a9ca99c9ceb0279c1cb0a7'
+    'fddf1b37dd34b3b201d43c57bcde115838f0df701da93c3bf2c9c86896e7e6c7'), 0)
+    = '3b9e2613dc71d49925cc3258a3a4201aea4336c2a648ca8dffb45bbdad4835e8' AS random4;
+
+-- random 5
+SELECT SHA256A(UNHEX(
+    'f41ece2613e4573915696b5adcd51ca328be3bf566a9ca99c9ceb0279c1cb0a7'
+    'fddf1b37dd34b3b201d43c57bcde115838f0df701da93c3bf2c9c86896e7e6c7'
+    '3b9e2613dc71d49925cc3258a3a4201aea4336c2a648ca8dffb45bbdad4835e8'), 0)
+    = '9fbac41c7453a2c88fd3fed1f685ef27587bebcc573209bcc1b9f9eecf03c1fd' AS random5;
+
+-- random 6
+SELECT SHA256A(UNHEX(
+    'fddf1b37dd34b3b201d43c57bcde115838f0df701da93c3bf2c9c86896e7e6c7'
+    '3b9e2613dc71d49925cc3258a3a4201aea4336c2a648ca8dffb45bbdad4835e8'
+    '9fbac41c7453a2c88fd3fed1f685ef27587bebcc573209bcc1b9f9eecf03c1fd'), 0)
+    = 'b125c98b1a9d25f337b5a78815b6b7a7f091d32880e8681bdec8584b92aa3bf8' AS random6;
