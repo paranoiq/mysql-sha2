@@ -1,3 +1,5 @@
+DELIMITER ;;
+
 /**
  * SHA-256 and SHA-224 hashing algorythms
  * 
@@ -93,7 +95,7 @@ BEGIN
             LPAD(HEX(h0), 8, '0'), LPAD(HEX(h1), 8, '0'), LPAD(HEX(h2), 8, '0'), LPAD(HEX(h3), 8, '0'), 
             LPAD(HEX(h4), 8, '0'), LPAD(HEX(h5), 8, '0'), LPAD(HEX(h6), 8, '0'), LPAD(HEX(h7), 8, '0')));
     END IF;
-END
+END;;
 
 
 CREATE FUNCTION `ARRAY_GET_INT`(`array` blob, `idx` int unsigned) RETURNS int(1) unsigned
@@ -106,7 +108,7 @@ BEGIN
          | (ORD(SUBSTR(array, idx + 1, 1)) << 16) 
          | (ORD(SUBSTR(array, idx + 2, 1)) <<  8) 
          | (ORD(SUBSTR(array, idx + 3, 1)));
-END
+END;;
 
 
 CREATE FUNCTION `ROR_INT`(`inp` bigint, `shft` tinyint) RETURNS int(1) unsigned
@@ -115,5 +117,5 @@ CREATE FUNCTION `ROR_INT`(`inp` bigint, `shft` tinyint) RETURNS int(1) unsigned
     COMMENT 'Right bit rotation on 32-bit integer'
 BEGIN
     RETURN ((inp >> shft) | (inp << (32 - shft))) & 0x00000000FFFFFFFF;
-END
+END;;
 

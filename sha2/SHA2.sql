@@ -1,3 +1,5 @@
+DELIMITER ;;
+
 /**
  * SHA2 algorythms wrapper
  * 
@@ -15,4 +17,4 @@ BEGIN
         WHEN 512 THEN RETURN SHA512A(msg, 0);
         ELSE RETURN ERROR.WRONG_ALGORYTHM_IDENTIFICATOR_USED();
     END CASE;
-END
+END;;

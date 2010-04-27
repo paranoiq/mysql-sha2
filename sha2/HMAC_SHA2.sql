@@ -1,3 +1,5 @@
+DELIMITER ;;
+
 /**
  * HMAC function based on SHA2 algorythms
  * 
@@ -29,7 +31,7 @@ BEGIN
     SET opad = STRING_XOR(msgkey, 0x5C);
     
     RETURN SHA2( CONCAT(opad, UNHEX( SHA2(CONCAT(ipad, msg), alg) )), alg );
-END
+END;;
 
 
 /**
@@ -53,5 +55,5 @@ BEGIN
     END WHILE;
     
     RETURN UNHEX(result);
-END
+END;;
 
