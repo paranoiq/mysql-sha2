@@ -3,7 +3,7 @@ DELIMITER ;;
 /**
  * SHA2 algorythms wrapper
  * 
- * @author Vlasta Neubauer [paranoiq@paranoiq.cz]
+ * @author Vlasta Neubauer [paranoiq@centrum.cz]
  */
 CREATE FUNCTION `SHA2`(`alg` smallint, `msg` mediumblob) RETURNS varchar(128) CHARSET utf8
     NO SQL
