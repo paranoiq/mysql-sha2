@@ -4,7 +4,7 @@ DELIMITER ;;
  * SHA-256 and SHA-224 hashing algorythms
  * 
  * @author Gwynne Raskind (http://blog.darkrainfall.org/)
- * @author Vlasta Neubauer [paranoiq@paranoiq.cz]
+ * @author Vlasta Neubauer [paranoiq@centrum.cz]
  */
 CREATE FUNCTION `SHA256A`(`msg` mediumblob, `sha224` tinyint) RETURNS varchar(64) CHARSET utf8
     NO SQL
