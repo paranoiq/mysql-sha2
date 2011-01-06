@@ -1,8 +1,7 @@
-
 Implementation of SHA2 hashing functions and related HMAC functions in PL/MySQL
 
 
-Author: Vlasta Neubauer [paranoiq@paranoiq.cz]
+Author: Vlasta Neubauer [paranoiq@centrum.cz]
 
 
 License and warranty:
