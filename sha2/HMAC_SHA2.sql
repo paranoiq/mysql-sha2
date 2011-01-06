@@ -3,7 +3,7 @@ DELIMITER ;;
 /**
  * HMAC function based on SHA2 algorythms
  * 
- * @author Vlasta Neubauer [paranoiq@paranoiq.cz]
+ * @author Vlasta Neubauer [paranoiq@centrum.cz]
  */
 CREATE FUNCTION `HMAC_SHA2`(`alg` smallint, `msg` mediumblob, `msgkey` mediumblob) RETURNS varchar(128) CHARSET utf8
     NO SQL
