@@ -3,7 +3,7 @@ DELIMITER ;;
 /**
  * SHA-512 and SHA-384 hashing algorythm
  * 
- * @author Vlasta Neubauer [paranoiq@paranoiq.cz]
+ * @author Vlasta Neubauer [paranoiq@centrum.cz]
  */
 CREATE FUNCTION `SHA512A`(`msg` mediumblob, `sha384` tinyint) RETURNS varchar(128) CHARSET utf8
     NO SQL
